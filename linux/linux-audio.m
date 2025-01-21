@@ -155,7 +155,7 @@ NSLog(@"unable to write to audio device, frameCount %d result %d", frameCount, n
 
 - (void)writeAudio:(uint16_t *)buffer frameCount:(int)frameCount
 {
-    [_aplay writeBytes:buffer length:_numberOfChannels*(_bitsPerChannel/8)*frameCount];
+    [_aplay writeBytes:(unsigned char *)buffer length:_numberOfChannels*(_bitsPerChannel/8)*frameCount];
 }
 
 - (void)closeAudio

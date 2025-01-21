@@ -1,18 +1,9 @@
 hotKey,displayName,messageForClick
-"F1",XTerm,"[ 'hotdog-xterm.sh' ] | runCommandInBackground"
-,Chrome,"[ 'chromium' ] | runCommandInBackground"
+"F1",Alacritty,"[ 'alacritty' ] | runCommandInBackground"
+,Firefox,"[ 'firefox' ] | runCommandInBackground"
+"F1",Run...,"[ 'hotdog-run.sh' ] | runCommandInBackground"
 ,,
 "F2",Home,"NSArray|addObject:'hotdog'|addObject:'open'|addObject:(homeDir)|runCommandInBackground"
-,,
-,Breakout,"['hotdog' 'show' 'Breakout']|runCommandInBackground"
-,Calculator,"['hotdog' 'show' 'Calculator']|runCommandInBackground"
-,CentipedeClone,"['hotdog' 'show' 'CentipedeClone']|runCommandInBackground"
-,ConnectFour,"['hotdog' 'show' 'ConnectFour']|runCommandInBackground"
-,FifteenPuzzle,"['hotdog' 'show' 'FifteenPuzzle']|runCommandInBackground"
-,KaboomClone,"['hotdog' 'show' 'KaboomClone']|runCommandInBackground"
-,Spider,"['hotdog' 'show' 'Spider']|runCommandInBackground"
-,Stopwatch,"['hotdog' 'show' 'Stopwatch']|runCommandInBackground"
-,WorldClock,"['hotdog' 'show' 'WorldClock']|runCommandInBackground"
 ,,
 ,Enter Hot Dog Stand Mode,"windowManager|setValue:'enterHotDogStandMode' forKey:'pendingMessage'"
 ,Enter Hot Dog Stand Mode x2,"windowManager|setValue:'enterHotDogStandMode:2' forKey:'pendingMessage'"

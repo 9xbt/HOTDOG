@@ -136,7 +136,8 @@ static unsigned char *button_bottom_right_squared =
 @implementation SongListInterface
 - (void)handleBackgroundUpdate:(id)event
 {
-    time_t timestamp = [@"." fileModificationTimestamp];
+    time_t timestamp = [[@"." fileModificationTimestamp] longValue];
+
     if (timestamp == _timestamp) {
         _seconds++;
         return;

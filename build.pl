@@ -3,11 +3,11 @@
 use strict;
 
 #my $LIBOBJC = '/usr/lib/libobjc.a';
-my $LIBOBJC = '/usr/lib64/libobjc.a';
+my $LIBOBJC = '/usr/lib/libobjc.so';
 
-my $libobjc2_cflags = '-DGC_DEBUG -DGNUSTEP -DNO_LEGACY -DTYPE_DEPENDENT_DISPATCH -D__OBJC_RUNTIME_INTERNAL__=1  -std=gnu99  -fexceptions -fPIC';
-my $libobjc2_asmflags = '-fPIC -DGC_DEBUG -DGNUSTEP -DNO_LEGACY -DTYPE_DEPENDENT_DISPATCH -D__OBJC_RUNTIME_INTERNAL__=1  -fPIC';
-my $libobjc2_mflags = '-DGC_DEBUG -DGNUSTEP -DNO_LEGACY -DTYPE_DEPENDENT_DISPATCH -D__OBJC_RUNTIME_INTERNAL__=1  -std=gnu99  -fexceptions -fPIC    -Wno-deprecated-objc-isa-usage -Wno-objc-root-class -fobjc-runtime=gnustep-1.7';
+my $libobjc2_cflags = '-DGC_DEBUG -DGNUSTEP -DNO_LEGACY -DTYPE_DEPENDENT_DISPATCH -D__OBJC_RUNTIME_INTERNAL__=1 -std=gnu99 -fexceptions -fPIC -w';
+my $libobjc2_asmflags = '-fPIC -DGC_DEBUG -DGNUSTEP -DNO_LEGACY -DTYPE_DEPENDENT_DISPATCH -D__OBJC_RUNTIME_INTERNAL__=1 -fPIC -w';
+my $libobjc2_mflags = '-DGC_DEBUG -DGNUSTEP -Wno-all -DNO_LEGACY -DTYPE_DEPENDENT_DISPATCH -D__OBJC_RUNTIME_INTERNAL__=1 -std=gnu99 -fexceptions -fPIC -Wno-deprecated-objc-isa-usage -Wno-objc-root-class -fobjc-runtime=gnustep-1.7 -w -Wnoincompatible-pointer-types';
 
 sub getExecPath
 {
@@ -57,6 +57,8 @@ sub cflagsForFile
     -DBUILD_WITH_GNU_PRINTF
     -DBUILD_WITH_GNU_QSORT_R
     -DBUILD_WITH_BGRA_PIXEL_FORMAT
+    -Wno-incompatible-pointer-types
+    -Wno-all
     -std=c99
     -fconstant-string-class=NSConstantString
 EOF

@@ -24,6 +24,7 @@
  */
 
 #import "HOTDOG.h"
+#import <unistd.h>
 
 static int numberOfRows = 6;
 static int numberOfColumns = 4;
@@ -665,7 +666,8 @@ static void handleClick(id name)
         [cmd runCommandInBackground];
         return;
     } else if ([name isEqual:@"Camera"]) {
-        BOOL exists = [@"/dev/video0" fileExists];
+        BOOL exists = (access(@"/dev/video0", F_OK) == 0);
+
         if (exists) {
             id cmd = nsarr();
             [cmd addObject:@"ffplay"];
